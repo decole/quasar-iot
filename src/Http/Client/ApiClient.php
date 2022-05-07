@@ -4,7 +4,6 @@
 namespace Decole\Quasar\Http\Client;
 
 
-
 use Decole\Quasar\Dto\ConfigDto;
 use Decole\Quasar\Exception\ApiException;
 

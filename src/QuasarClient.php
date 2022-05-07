@@ -67,7 +67,7 @@ class QuasarClient
     /**
      * @return string scenario_id
      *
-     * @throws RussianWordException
+     * @throws RussianWordException|ApiException
      */
     public function createScenario(): string
     {

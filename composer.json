@@ -5,7 +5,8 @@
     "require": {
         "php": "^7.4||^8.0",
         "ext-json": "*",
-        "ext-curl": "*"
+        "ext-curl": "*",
+        "ext-mbstring": "*"
     },
     "license": "MIT",
     "autoload": {
@@ -31,5 +32,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "version": "1.0.1"
+    "version": "1.0.2"
 }

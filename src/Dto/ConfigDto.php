@@ -1,6 +1,8 @@
 <?php
 
+
 namespace Decole\Quasar\Dto;
+
 
 class ConfigDto
 {

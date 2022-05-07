@@ -4,12 +4,16 @@
 namespace Decole\Quasar\Actions;
 
 
+use Decole\Quasar\Exception\ApiException;
 use Decole\Quasar\Http\Client\ApiClient;
 
 class CreateScenarioAction extends AbstractAction
 {
     protected $url = 'https://iot.quasar.yandex.ru/m/v3/user/scenarios/';
 
+    /**
+     * @throws ApiException
+     */
     public function execute(): string
     {
         $data = $this->client->request($this->url, ApiClient::POST, $this->getParams());
