@@ -18,7 +18,7 @@ It is bundle for Laravel and just for simple php projects, which will help send 
 audio smart devices via external api https://yandex.ru/quasar/iot/. Audio device with voice assistant Alice 
 will be able to say what you sent without your manual voice activation.
 
-## !! 100 character limit per message
+## 100 characters limit per message !
 
 I did it myself for voicing notifications and important notifications.
 
@@ -28,7 +28,7 @@ Optionally, if you use **Laravel**, you can publish the config file of this pack
 $ php artisan vendor:publish --provider="Decole\Quasar\Adapters\Laravel\QuasarServiceProvider" --tag=config
 ```
 
-## Как найти cookies
+## How to find cookies
 
 Log in to https://yandex.ru/quasar/iot/
 
