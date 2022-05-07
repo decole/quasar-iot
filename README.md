@@ -42,7 +42,7 @@ This **Cookie** string is needed for this library to work.
 ```php
 $cookies = 'yandexuid=0000000000000000000; L=Ykkkkkkkkkk+awwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww==.1111111111.11111.111111.88888888888888888888888888888888; yandex_login=oooooooooo; yuidss=9999999999999999999; ymex=1111111111.yrts.1111111111; is_gdpr=0; is_gdpr_b=CCCCCCCCCCCC; my=YwA=; gdpr=0; _ym_uid=1111111111111111111; mda=0; amcuid=9999999999999999999; computer=1; XcfPaDInQpzKj=1; i=G4jBbeJV022E4y/HME9eMh/JJJJJJJJ+JJJJJJJ/JJJJJJJJ/ggggggggggggg+RRRRRRRRRRRRRRRRRRR+/H8dmxaI=; yp=1111111111.udn.cDDDDDDDDDDDDDDDDDDDDDDDDDD.org_id.333333333333333333.ygu.1#1111111111.spcs.l#1111111111.szm.1:111111111:1111111111111111111.los.1#1111111111.losc.0#1111111111.mcv.0#1111111111.mcl.1111111; device_id=11111111111111111111111111111111111111111; _ym_d=1111111111; skid=1111111111111111111; Cookie_check=1; instruction=1; Session_id=3:11111111111111111111111111111111111:24.1.2:1|111111111.0.2|3:111111.111111.11111111111111_111111111111; sessionid2=3:1111111111.5.0.1111111111111:111111:24.1.2:1|111111111.0.2|3:111111.111111.111111111111111111111111111; ys=udn.cccccccccccccccc#c_chck.1111111111; active-browser-timestamp=1111111111111; _ym_isad=2; _yasc=1111111111111111111111111111111111111111111111111111111111111111111www==';
 $service = new QuasarClient($cookies);
-$t = $service->getDevises();
+$t = $service->getDevices();
 dd($t); // view array data in browser
 
 /* ------- */
@@ -74,7 +74,7 @@ $service->deleteScenario();
 0. You need to add your smart speaker to the devices of your Yandex account.
    So that your device can be seen in https://yandex.ru/quasar/iot/.
 1. Pull out **Cookie** of your account and save. This line is needed for the entire service to work. See picture above. 
-2. Find the column id. the `$service->getDevises()` method will give you all your devices (in all houses and rooms)
+2. Find the column id. the `$service->getDevices()` method will give you all your devices (in all houses and rooms)
 3. You need to create a custom script if it doesn't already exist. For example, it could be a scenario named "Голос" 
    `$service->createScenario()`
 4. Change the spoken text `$service->changeTextSpeechByScenario('Всем привет');` - 100 characters limit
@@ -92,10 +92,10 @@ $service->setDeviceId($deviceId);
 $service->setScenarioId($scenarioId);
 
 // see all your devices
-$service->getDevises();
+$service->getDevices();
 
 // see all your devices filtered by <type> or <item_type>
-$service->getDevises('device');
+$service->getDevices('device');
 
 // create scenario
 $service->createScenario();
@@ -156,7 +156,7 @@ Dо вкладке "Network" открыть любой Fetch/XHR запрос и
 ```php
 $cookies = 'yandexuid=0000000000000000000; L=Ykkkkkkkkkk+awwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww==.1111111111.11111.111111.88888888888888888888888888888888; yandex_login=oooooooooo; yuidss=9999999999999999999; ymex=1111111111.yrts.1111111111; is_gdpr=0; is_gdpr_b=CCCCCCCCCCCC; my=YwA=; gdpr=0; _ym_uid=1111111111111111111; mda=0; amcuid=9999999999999999999; computer=1; XcfPaDInQpzKj=1; i=G4jBbeJV022E4y/HME9eMh/JJJJJJJJ+JJJJJJJ/JJJJJJJJ/ggggggggggggg+RRRRRRRRRRRRRRRRRRR+/H8dmxaI=; yp=1111111111.udn.cDDDDDDDDDDDDDDDDDDDDDDDDDD.org_id.333333333333333333.ygu.1#1111111111.spcs.l#1111111111.szm.1:111111111:1111111111111111111.los.1#1111111111.losc.0#1111111111.mcv.0#1111111111.mcl.1111111; device_id=11111111111111111111111111111111111111111; _ym_d=1111111111; skid=1111111111111111111; Cookie_check=1; instruction=1; Session_id=3:11111111111111111111111111111111111:24.1.2:1|111111111.0.2|3:111111.111111.11111111111111_111111111111; sessionid2=3:1111111111.5.0.1111111111111:111111:24.1.2:1|111111111.0.2|3:111111.111111.111111111111111111111111111; ys=udn.cccccccccccccccc#c_chck.1111111111; active-browser-timestamp=1111111111111; _ym_isad=2; _yasc=1111111111111111111111111111111111111111111111111111111111111111111www==';
 $service = new QuasarClient($cookies);
-$t = $service->getDevises();
+$t = $service->getDevices();
 dd($t); // выводим список устройств
 
 /* ------- */
@@ -188,7 +188,7 @@ $service->deleteScenario();
 0. Нужно добавить вашу умную колонку в устройства вашей учетной записи Яндекса.
    Чтобы в https://yandex.ru/quasar/iot/ ваше устройство было видно.
 1. Вытащить **Cookie** вашей учетной записи и сохранить. Данная строка нужна для работы всего сервиса. Смотри рисунок выше.
-2. Найдите id колонки. метод `$service->getDevises()` выведет вам все ваши устройства (во всех домах и комнатах)
+2. Найдите id колонки. метод `$service->getDevices()` выведет вам все ваши устройства (во всех домах и комнатах)
 3. Нужно создать специальный сценарий, если его еще нет. Например, это может быть сценарий с именем "Голос"
    `$service->createScenario()`
 4. Изменение озвучиваемого текста `$service->changeTextSpeechByScenario('Всем привет');` - ограничение в 100 символов
@@ -205,10 +205,10 @@ $service->setDeviceId($deviceId);
 $service->setScenarioId($scenarioId);
 
 // посмотреть все ваши устройства
-$service->getDevises();
+$service->getDevices();
 
 // Посмотреть все устройства отфильтрованные по <type> или <item_type>. Смотри вывод предыдущей команды
-$service->getDevises('device');
+$service->getDevices('device');
 
 // создание сценария, с которым будет работать данная библиотека
 $service->createScenario();

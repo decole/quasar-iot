@@ -45,7 +45,7 @@ class QuasarClient
     /**
      * @return array<int, DeviceDto>
      */
-    public function getDevises(string $type = 'all'): array
+    public function getDevices(string $type = 'all'): array
     {
         $devices = (new DevicesAction($this->config))->execute();
 
