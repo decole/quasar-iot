@@ -1,0 +1,35 @@
+{
+    "name": "decole/quasar-iot",
+    "description": "Bundler for yandex quasar for Yandex Alice remote TTS",
+    "type": "library",
+    "require": {
+        "php": "^7.4||^8.0",
+        "ext-json": "*",
+        "ext-curl": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Decole\\Quasar\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Galochkin Sergey",
+            "email": "decole2014@yandex.ru"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Decole\\Quasar\\Adapters\\Laravel\\QuasarServiceProvider"
+            ],
+            "aliases": {
+                "YrNo": "Decole\\Quasar\\Adapters\\Laravel\\Facades\\QuasarFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "1.0.0"
+}
