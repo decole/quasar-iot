@@ -41,7 +41,7 @@ class ChangeTextSpeechByScenarioAction extends AbstractAction
     private function getParams(): array
     {
         return [
-            'name' => 'тромб',
+            'name' => $this->config->command,
             'icon' => 'home',
             'triggers' => [
                 [
